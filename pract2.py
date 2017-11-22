@@ -9,12 +9,19 @@ clear()
 
 def game(): 
     velocidad = 3 
-    print ("Bienvenido al juego de memoria.")
-    print ("Instrucciones:") 
+    print ("\n                          ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗",
+           "\n                          ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝",
+           "\n                          ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ",
+           "\n                          ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ",
+           "\n                          ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗",
+            "\n                          ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ")
+    time.sleep(5)
+    print ("\n Instrucciones: Este juego consiste en memorizar un patron de caracteres e indicar la posición del valor X. A continuacion os enseñaremos un ejemplo:")
+    time.sleep(5)
     print ("1- (x,0,0)") 
     print ("2- (0,x,0)") 
     print ("1- (0,0,x)") 
-    time.sleep(10) 
+    time.sleep(3) 
     print ("Listo") 
     time.sleep(3) 
     print ("YA") 
@@ -30,8 +37,10 @@ def game():
             rand = random.randrange(3) 
             tempS.append(secuencias[rand]) 
 
+        cont = 1
         for i in tempS: 
-            print (i, "a") 
+            print (i, cont)
+            cont +=1
             time.sleep(2) 
             clear() 
 
@@ -53,7 +62,7 @@ def game():
             print ("ya") 
             time.sleep(1) 
         else: 
-            print ("Perdiste") 
+            print ("\n Perdiste \n") 
             if velocidad > 2: 
                 velocidad -= 1 
                 print ("Bajaste a ", velocidad) 
@@ -62,8 +71,14 @@ def game():
                 time.sleep(1) 
                 print ("ya") 
                 time.sleep(1) 
-            else: 
-                print ("Game over ") 
+            else:
+                print("\n                    ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ ",
+                       "\n                   ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗",
+                       "\n                   ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝",
+                       "\n                   ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗",
+                       "\n                   ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║",
+                        "\n                   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
+                time.sleep(10)
                 break 
 
         clear() 
