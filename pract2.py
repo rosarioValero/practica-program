@@ -12,6 +12,7 @@ def gameEasy():
     
     print ("\n Instrucciones: Memoriza la posición del valor X")
     time.sleep(3)
+    print("\n Por ejemplo: ")
     print ("1- (x,0,0)") 
     print ("2- (0,x,0)") 
     print ("3- (0,0,x)")
@@ -42,8 +43,8 @@ def gameEasy():
         contador = 1 
 
         for j in range(partidas): 
-            print ("\n Introduzca el ", contador) 
-            usuario = input(": ") 
+            print ("\n Introduzca la posicion: ", contador) 
+            usuario = input() 
             intentos.append(secuencias[int(usuario)-1]) 
             contador += 1 
 
@@ -73,11 +74,12 @@ def gameEasy():
                        "\n                   ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗",
                        "\n                   ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║",
                         "\n                   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
-                time.sleep(10)
+                time.sleep(5)
                 break 
 
         clear() 
-
+    clear()
+    menu()
 
 
 def gameHard(): 
@@ -85,6 +87,7 @@ def gameHard():
     
     print ("\n Instrucciones: Memoriza la posición del valor X")
     time.sleep(3)
+    print("\n Por ejemplo: ")
     print ("1- (x,0,0,0)") 
     print ("2- (0,x,0,0)") 
     print ("3- (0,0,x,0)")
@@ -116,8 +119,8 @@ def gameHard():
         contador = 1 
 
         for j in range(partidas): 
-            print ("\n Introduzca el ", contador) 
-            usuario = input(": ") 
+            print ("\n Introduzca la posicion: ", contador) 
+            usuario = input() 
             intentos.append(secuencias[int(usuario)-1]) 
             contador += 1 
 
@@ -147,10 +150,13 @@ def gameHard():
                        "\n                   ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗",
                        "\n                   ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║",
                         "\n                   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
-                time.sleep(10)
+                time.sleep(5)
                 break 
 
         clear()
+    clear()
+    menu()
+        
         
 def menu():
     print ("\n                          ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗",
@@ -167,20 +173,22 @@ def menu():
     print("           2) Mode Hard                                    ")
     print("           3) Salir                                        ")
     print("===========================================================")
-    
+
 
     print("Selecciona una opción: ")
     opcion = int(input())
 
-    if opcion == 1:
-       gameEasy()
-    elif opcion == 2:
-        gameHard()
-    elif opcion==3:
-        print('salir ')
-    else:
-        print('No haz introducido ninguna opción')
+    while opcion != 3:
+        if opcion == 1:
+           gameEasy()
+        elif opcion == 2:
+            gameHard()
+        elif opcion==3:
+            print('salir ')
+        else:
+            print('No haz introducido ninguna opción')
     return opcion
 
 
 menu()
+
